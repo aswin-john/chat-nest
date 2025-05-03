@@ -9,8 +9,8 @@ import {
   ScrollView,
   KeyboardAvoidingView,
 } from 'react-native';
-import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import { RFPercentage } from 'react-native-responsive-fontsize';
+import { figmaWidth, figmaHeight } from '../../utils/figmaHelpers'; // adjust path as needed
 
 const LoginScreen = () => {
   const [passwordVisible, setPasswordVisible] = useState(false);
@@ -37,7 +37,7 @@ const LoginScreen = () => {
             />
           </View>
 
-          <View style={styles.inputContainer}>
+          <View style={[styles.inputContainer, { marginBottom: figmaHeight(10), }]}>
             <TextInput
               placeholder="password"
               style={styles.input}
@@ -52,7 +52,7 @@ const LoginScreen = () => {
             </TouchableOpacity>
           </View>
 
-          <TouchableOpacity>
+          <TouchableOpacity style = {{alignSelf:'flex-end',marginBottom: figmaHeight(30),}}>
             <Text style={styles.forgotPassword}>Forgot password?</Text>
           </TouchableOpacity>
 
@@ -82,26 +82,26 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
-    paddingHorizontal: wp('8%'),
-    paddingVertical: hp('5%'),
+    paddingHorizontal: figmaWidth(40),  // 30px → 8% approx
+    paddingVertical: figmaHeight(33),  // 32px → 5% approx
     backgroundColor: '#fff',
   },
   welcomeText: {
     fontSize: RFPercentage(3),
     fontWeight: 'bold',
     textAlign: 'center',
-    marginBottom: hp('2%'),
+    marginBottom: figmaHeight(25),
   },
   image: {
-    width: wp('80%'),
-    height: hp('25%'),
-    marginBottom: hp('3%'),
+    width: figmaWidth(160),    
+    height: figmaHeight(160),  
+    marginBottom: figmaHeight(20),
   },
   loginLabel: {
     fontSize: RFPercentage(2.8),
     fontWeight: '600',
     alignSelf: 'flex-start',
-    marginBottom: hp('1.5%'),
+    marginBottom: figmaHeight(20),
     color: '#a855f7',
   },
   inputContainer: {
@@ -110,20 +110,21 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     flexDirection: 'row',
     alignItems: 'center',
-    marginBottom: hp('2%'),
-    paddingHorizontal: wp('3%'),
+    marginBottom: figmaHeight(15),
+    paddingHorizontal: figmaWidth(12),
   },
   input: {
     flex: 1,
-    paddingVertical: hp('1.5%'),
+    paddingVertical: figmaHeight(10),
     fontSize: RFPercentage(2.3),
   },
   eyeButton: {
-    padding: wp('2%'),
+    padding: figmaWidth(8),
   },
   forgotPassword: {
-    alignSelf: 'flex-end',
-    marginBottom: hp('3%'),
+    // alignSelf: 'flex-end',
+    // alignSelf:'flex-end',
+    
     fontSize: RFPercentage(2),
     color: '#e11d48',
   },
@@ -132,8 +133,8 @@ const styles = StyleSheet.create({
     borderRadius: 50,
     width: '100%',
     alignItems: 'center',
-    paddingVertical: hp('1.8%'),
-    marginBottom: hp('3%'),
+    paddingVertical: figmaHeight(12),
+    marginBottom: figmaHeight(15),
   },
   signInText: {
     color: '#fff',
@@ -141,15 +142,15 @@ const styles = StyleSheet.create({
     fontWeight: '600',
   },
   orText: {
-    marginBottom: hp('1.5%'),
+    marginBottom: figmaHeight(15),
     fontSize: RFPercentage(2.3),
     color: '#999',
   },
   socialIcons: {
     flexDirection: 'row',
     justifyContent: 'space-around',
-    width: wp('60%'),
-    marginBottom: hp('3%'),
+    width: figmaWidth(216), // 60% of 360px
+    marginBottom: figmaHeight(15),
   },
   socialIcon: {
     fontSize: RFPercentage(3),
