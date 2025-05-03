@@ -85,12 +85,14 @@ const styles = StyleSheet.create({
     paddingHorizontal: figmaWidth(40),  
     paddingVertical: figmaHeight(33),  
     backgroundColor: '#fff',
+    
   },
   welcomeText: {
     fontSize: RFPercentage(3),
     fontWeight: 'bold',
     textAlign: 'center',
     marginBottom: figmaHeight(25),
+    paddingHorizontal: figmaWidth(26),
   },
   image: {
     width: figmaWidth(160),    
@@ -107,7 +109,7 @@ const styles = StyleSheet.create({
   inputContainer: {
     width: '100%',
     backgroundColor: '#f0f0f0',
-    borderRadius: 12,
+    borderRadius: 10,
     flexDirection: 'row',
     alignItems: 'center',
     marginBottom: figmaHeight(15),
@@ -131,9 +133,13 @@ const styles = StyleSheet.create({
   signInButton: {
     backgroundColor: '#a855f7',
     borderRadius: 50,
-    width: '100%',
+    // width: '50%',
     alignItems: 'center',
-    paddingVertical: figmaHeight(12),
+    justifyContent: 'center',
+    // paddingVertical: figmaHeight(7),
+    // paddingHorizontal: figmaWidth(32),
+    width: figmaWidth(105),
+    height: figmaHeight(32),
     marginBottom: figmaHeight(15),
   },
   signInText: {
@@ -149,7 +155,8 @@ const styles = StyleSheet.create({
   socialIcons: {
     flexDirection: 'row',
     justifyContent: 'space-around',
-    width: figmaWidth(216), 
+    width: figmaWidth(117), 
+    height: figmaHeight(25),
     marginBottom: figmaHeight(15),
   },
   socialIcon: {
