@@ -6,72 +6,75 @@ import {
   Image,
   TouchableOpacity,
   StyleSheet,
-  Dimensions,
-  useWindowDimensions,
+  ScrollView,
+  KeyboardAvoidingView,
 } from 'react-native';
-
-const { width } = Dimensions.get('window');
+import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
+import { RFPercentage } from 'react-native-responsive-fontsize';
 
 const LoginScreen = () => {
   const [passwordVisible, setPasswordVisible] = useState(false);
-  const { height } = useWindowDimensions();
 
   return (
-    <View style={[styles.container, { paddingVertical: height * 0.05 }]}>
-      <Text style={styles.welcomeText}>Welcome back !, Let’s get you started</Text>
-      
-      <Image
-        source={require('../../../assets/images/login-illustration.png')}
-        style={[styles.image, { height: height * 0.25 }]}
-        resizeMode="contain"
-      />
+    <KeyboardAvoidingView style={{ flex: 1 }}>
+      <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
+        <View style={styles.container}>
+          <Text style={styles.welcomeText}>Welcome back! Let’s get you started</Text>
 
-      <Text style={styles.loginLabel}>Login</Text>
+          <Image
+            source={require('../../../assets/images/login-illustration.png')}
+            style={styles.image}
+            resizeMode="contain"
+          />
 
-      <View style={styles.inputContainer}>
-        <TextInput
-          placeholder="user name"
-          style={styles.input}
-          placeholderTextColor="#999"
-        />
-      </View>
+          <Text style={styles.loginLabel}>Login</Text>
 
-      <View style={styles.inputContainer}>
-        <TextInput
-          placeholder="password"
-          style={styles.input}
-          placeholderTextColor="#999"
-          secureTextEntry={!passwordVisible}
-        />
-        <TouchableOpacity
-          style={styles.eyeButton}
-          onPress={() => setPasswordVisible(!passwordVisible)}
-        >
-          <Text>{passwordVisible ? '🙈' : '👁️'}</Text>
-        </TouchableOpacity>
-      </View>
+          <View style={styles.inputContainer}>
+            <TextInput
+              placeholder="user name"
+              style={styles.input}
+              placeholderTextColor="#999"
+            />
+          </View>
 
-      <TouchableOpacity>
-        <Text style={styles.forgotPassword}>Forgot password ?</Text>
-      </TouchableOpacity>
+          <View style={styles.inputContainer}>
+            <TextInput
+              placeholder="password"
+              style={styles.input}
+              placeholderTextColor="#999"
+              secureTextEntry={!passwordVisible}
+            />
+            <TouchableOpacity
+              style={styles.eyeButton}
+              onPress={() => setPasswordVisible(!passwordVisible)}
+            >
+              <Text>{passwordVisible ? '🙈' : '👁️'}</Text>
+            </TouchableOpacity>
+          </View>
 
-      <TouchableOpacity style={styles.signInButton}>
-        <Text style={styles.signInText}>Sign In</Text>
-      </TouchableOpacity>
+          <TouchableOpacity>
+            <Text style={styles.forgotPassword}>Forgot password?</Text>
+          </TouchableOpacity>
 
-      <Text style={styles.orText}>or</Text>
+          <TouchableOpacity style={styles.signInButton}>
+            <Text style={styles.signInText}>Sign In</Text>
+          </TouchableOpacity>
 
-      <View style={styles.socialIcons}>
-        <Text style={styles.socialIcon}>G</Text>
-        <Text style={styles.socialIcon}>📸</Text>
-        <Text style={styles.socialIcon}>f</Text>
-      </View>
+          <Text style={styles.orText}>or</Text>
 
-      <Text style={styles.registerText}>
-        Don’t have an Account ?{' '}
-        <Text style={styles.registerNow}>Register now</Text>
-      </Text>
-    </View>
+          <View style={styles.socialIcons}>
+            <Text style={styles.socialIcon}>G</Text>
+            <Text style={styles.socialIcon}>📸</Text>
+            <Text style={styles.socialIcon}>f</Text>
+          </View>
+
+          <Text style={styles.registerText}>
+            Don’t have an Account?{' '}
+            <Text style={styles.registerNow}>Register now</Text>
+          </Text>
+        </View>
+      </ScrollView>
+    </KeyboardAvoidingView>
   );
 };
 
@@ -79,24 +82,26 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
-    paddingHorizontal: width * 0.08,
+    paddingHorizontal: wp('8%'),
+    paddingVertical: hp('5%'),
     backgroundColor: '#fff',
   },
   welcomeText: {
-    fontSize: width * 0.05,
+    fontSize: RFPercentage(3),
     fontWeight: 'bold',
     textAlign: 'center',
-    marginBottom: 20,
+    marginBottom: hp('2%'),
   },
   image: {
-    width: '80%',
-    marginBottom: 30,
+    width: wp('80%'),
+    height: hp('25%'),
+    marginBottom: hp('3%'),
   },
   loginLabel: {
-    fontSize: width * 0.045,
+    fontSize: RFPercentage(2.8),
     fontWeight: '600',
     alignSelf: 'flex-start',
-    marginBottom: 10,
+    marginBottom: hp('1.5%'),
     color: '#a855f7',
   },
   inputContainer: {
@@ -105,21 +110,21 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     flexDirection: 'row',
     alignItems: 'center',
-    marginBottom: 15,
-    paddingHorizontal: 10,
+    marginBottom: hp('2%'),
+    paddingHorizontal: wp('3%'),
   },
   input: {
     flex: 1,
-    padding: 12,
-    fontSize: width * 0.04,
+    paddingVertical: hp('1.5%'),
+    fontSize: RFPercentage(2.3),
   },
   eyeButton: {
-    padding: 8,
+    padding: wp('2%'),
   },
   forgotPassword: {
     alignSelf: 'flex-end',
-    marginBottom: 20,
-    fontSize: width * 0.035,
+    marginBottom: hp('3%'),
+    fontSize: RFPercentage(2),
     color: '#e11d48',
   },
   signInButton: {
@@ -127,30 +132,30 @@ const styles = StyleSheet.create({
     borderRadius: 50,
     width: '100%',
     alignItems: 'center',
-    paddingVertical: 12,
-    marginBottom: 20,
+    paddingVertical: hp('1.8%'),
+    marginBottom: hp('3%'),
   },
   signInText: {
     color: '#fff',
-    fontSize: width * 0.045,
+    fontSize: RFPercentage(2.5),
     fontWeight: '600',
   },
   orText: {
-    marginBottom: 10,
-    fontSize: width * 0.04,
+    marginBottom: hp('1.5%'),
+    fontSize: RFPercentage(2.3),
     color: '#999',
   },
   socialIcons: {
     flexDirection: 'row',
     justifyContent: 'space-around',
-    width: '60%',
-    marginBottom: 20,
+    width: wp('60%'),
+    marginBottom: hp('3%'),
   },
   socialIcon: {
-    fontSize: width * 0.06,
+    fontSize: RFPercentage(3),
   },
   registerText: {
-    fontSize: width * 0.035,
+    fontSize: RFPercentage(2),
     color: '#999',
   },
   registerNow: {
