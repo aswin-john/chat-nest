@@ -82,8 +82,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
-    paddingHorizontal: figmaWidth(40),  // 30px → 8% approx
-    paddingVertical: figmaHeight(33),  // 32px → 5% approx
+    paddingHorizontal: figmaWidth(40),  
+    paddingVertical: figmaHeight(33),  
     backgroundColor: '#fff',
   },
   welcomeText: {
@@ -149,7 +149,7 @@ const styles = StyleSheet.create({
   socialIcons: {
     flexDirection: 'row',
     justifyContent: 'space-around',
-    width: figmaWidth(216), // 60% of 360px
+    width: figmaWidth(216), 
     marginBottom: figmaHeight(15),
   },
   socialIcon: {
