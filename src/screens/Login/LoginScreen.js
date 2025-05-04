@@ -9,7 +9,7 @@ import {
   ScrollView,
   KeyboardAvoidingView,
 } from 'react-native';
-import { RFPercentage } from 'react-native-responsive-fontsize';
+
 import { figmaWidth, figmaHeight, figmaFontSize } from '../../utils/figmaHelpers'; // adjust path
 
 const LoginScreen = () => {
