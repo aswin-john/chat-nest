@@ -11,6 +11,8 @@ import {
 } from 'react-native';
 
 import { figmaWidth, figmaHeight, figmaFontSize } from '../../utils/figmaHelpers'; // adjust path
+import colors from '../../themes/colors'; // adjust path as needed
+
 
 const LoginScreen = () => {
   const [passwordVisible, setPasswordVisible] = useState(false);
@@ -84,8 +86,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingHorizontal: figmaWidth(40),  
     paddingVertical: figmaHeight(33),  
-    backgroundColor: '#fff',
-    
+    backgroundColor: colors.background,
   },
   welcomeText: {
     fontSize: figmaFontSize(18),
@@ -93,6 +94,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginBottom: figmaHeight(25),
     paddingHorizontal: figmaWidth(26),
+    color: colors.textPrimary,
   },
   image: {
     width: figmaWidth(160),    
@@ -104,11 +106,11 @@ const styles = StyleSheet.create({
     fontWeight: '600',
     alignSelf: 'flex-start',
     marginBottom: figmaHeight(20),
-    color: '#a855f7',
+    color: colors.primary,
   },
   inputContainer: {
     width: '100%',
-    backgroundColor: '#f0f0f0',
+    backgroundColor: colors.inputBackground,
     borderRadius: 10,
     flexDirection: 'row',
     alignItems: 'center',
@@ -119,35 +121,33 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingVertical: figmaHeight(10),
     fontSize: figmaFontSize(14),
+    color: colors.textPrimary,
   },
   eyeButton: {
     padding: figmaWidth(8),
   },
   forgotPassword: {
     fontSize: figmaFontSize(12),
-    color: '#e11d48',
+    color: colors.secondary,
   },
   signInButton: {
-    backgroundColor: '#a855f7',
+    backgroundColor: colors.primary,
     borderRadius: 50,
-    // width: '50%',
     alignItems: 'center',
     justifyContent: 'center',
-    // paddingVertical: figmaHeight(7),
-    // paddingHorizontal: figmaWidth(32),
     width: figmaWidth(105),
     height: figmaHeight(32),
     marginBottom: figmaHeight(15),
   },
   signInText: {
-    color: '#fff',
+    color: colors.background,
     fontSize: figmaFontSize(16),
     fontWeight: '600',
   },
   orText: {
     marginBottom: figmaHeight(15),
     fontSize: figmaFontSize(14),
-    color: '#999',
+    color: colors.textSecondary,
   },
   socialIcons: {
     flexDirection: 'row',
@@ -158,13 +158,14 @@ const styles = StyleSheet.create({
   },
   socialIcon: {
     fontSize: figmaFontSize(20),
+    color: colors.textPrimary,
   },
   registerText: {
     fontSize: figmaFontSize(12),
-    color: '#999',
+    color: colors.textSecondary,
   },
   registerNow: {
-    color: '#a855f7',
+    color: colors.primary,
     fontWeight: 'bold',
   },
 });
