@@ -12,6 +12,8 @@ import {
 
 import { figmaWidth, figmaHeight, figmaFontSize } from '../../utils/figmaHelpers'; // adjust path
 import colors from '../../themes/colors'; // adjust path as needed
+import typography from '../../themes/typography';
+import globalStyles from '../../themes/globalStyles';
 
 
 const LoginScreen = () => {
@@ -20,7 +22,7 @@ const LoginScreen = () => {
   return (
     <KeyboardAvoidingView style={{ flex: 1 }}>
       <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
-        <View style={styles.container}>
+        <View style={globalStyles.container}>
           <Text style={styles.welcomeText}>Welcome back! Let’s get you started</Text>
 
           <Image
@@ -31,7 +33,7 @@ const LoginScreen = () => {
 
           <Text style={styles.loginLabel}>Login</Text>
 
-          <View style={styles.inputContainer}>
+          <View style={globalStyles.inputContainer1}>
             <TextInput
               placeholder="user name"
               style={styles.input}
@@ -39,7 +41,7 @@ const LoginScreen = () => {
             />
           </View>
 
-          <View style={[styles.inputContainer, { marginBottom: figmaHeight(10), }]}>
+          <View style={[globalStyles.inputContainer1, { marginBottom: figmaHeight(10), }]}>
             <TextInput
               placeholder="password"
               style={styles.input}
@@ -58,7 +60,7 @@ const LoginScreen = () => {
             <Text style={styles.forgotPassword}>Forgot password?</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.signInButton}>
+          <TouchableOpacity style={globalStyles.Button1}>
             <Text style={styles.signInText}>Sign In</Text>
           </TouchableOpacity>
 
@@ -81,13 +83,6 @@ const LoginScreen = () => {
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    paddingHorizontal: figmaWidth(40),  
-    paddingVertical: figmaHeight(33),  
-    backgroundColor: colors.background,
-  },
   welcomeText: {
     fontSize: figmaFontSize(18),
     fontWeight: 'bold',
@@ -108,15 +103,6 @@ const styles = StyleSheet.create({
     marginBottom: figmaHeight(20),
     color: colors.primary,
   },
-  inputContainer: {
-    width: '100%',
-    backgroundColor: colors.inputBackground,
-    borderRadius: 10,
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginBottom: figmaHeight(15),
-    paddingHorizontal: figmaWidth(12),
-  },
   input: {
     flex: 1,
     paddingVertical: figmaHeight(10),
@@ -129,15 +115,6 @@ const styles = StyleSheet.create({
   forgotPassword: {
     fontSize: figmaFontSize(12),
     color: colors.secondary,
-  },
-  signInButton: {
-    backgroundColor: colors.primary,
-    borderRadius: 50,
-    alignItems: 'center',
-    justifyContent: 'center',
-    width: figmaWidth(105),
-    height: figmaHeight(32),
-    marginBottom: figmaHeight(15),
   },
   signInText: {
     color: colors.background,
