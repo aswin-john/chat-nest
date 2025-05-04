@@ -10,7 +10,7 @@ import {
   KeyboardAvoidingView,
 } from 'react-native';
 import { RFPercentage } from 'react-native-responsive-fontsize';
-import { figmaWidth, figmaHeight } from '../../utils/figmaHelpers'; // adjust path as needed
+import { figmaWidth, figmaHeight, figmaFontSize } from '../../utils/figmaHelpers'; // adjust path
 
 const LoginScreen = () => {
   const [passwordVisible, setPasswordVisible] = useState(false);
@@ -88,7 +88,7 @@ const styles = StyleSheet.create({
     
   },
   welcomeText: {
-    fontSize: RFPercentage(3),
+    fontSize: figmaFontSize(18),
     fontWeight: 'bold',
     textAlign: 'center',
     marginBottom: figmaHeight(25),
@@ -100,7 +100,7 @@ const styles = StyleSheet.create({
     marginBottom: figmaHeight(20),
   },
   loginLabel: {
-    fontSize: RFPercentage(2.8),
+    fontSize: figmaFontSize(18),
     fontWeight: '600',
     alignSelf: 'flex-start',
     marginBottom: figmaHeight(20),
@@ -118,16 +118,13 @@ const styles = StyleSheet.create({
   input: {
     flex: 1,
     paddingVertical: figmaHeight(10),
-    fontSize: RFPercentage(2.3),
+    fontSize: figmaFontSize(14),
   },
   eyeButton: {
     padding: figmaWidth(8),
   },
   forgotPassword: {
-    // alignSelf: 'flex-end',
-    // alignSelf:'flex-end',
-    
-    fontSize: RFPercentage(2),
+    fontSize: figmaFontSize(12),
     color: '#e11d48',
   },
   signInButton: {
@@ -144,12 +141,12 @@ const styles = StyleSheet.create({
   },
   signInText: {
     color: '#fff',
-    fontSize: RFPercentage(2.5),
+    fontSize: figmaFontSize(16),
     fontWeight: '600',
   },
   orText: {
     marginBottom: figmaHeight(15),
-    fontSize: RFPercentage(2.3),
+    fontSize: figmaFontSize(14),
     color: '#999',
   },
   socialIcons: {
@@ -160,10 +157,10 @@ const styles = StyleSheet.create({
     marginBottom: figmaHeight(15),
   },
   socialIcon: {
-    fontSize: RFPercentage(3),
+    fontSize: figmaFontSize(20),
   },
   registerText: {
-    fontSize: RFPercentage(2),
+    fontSize: figmaFontSize(12),
     color: '#999',
   },
   registerNow: {

@@ -1,5 +1,5 @@
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
-
+import { RFPercentage } from 'react-native-responsive-fontsize';
 // Set these to match your Figma frame dimensions
 const FIGMA_WIDTH = 360;
 const FIGMA_HEIGHT = 640;
@@ -22,4 +22,12 @@ export function figmaWidth(px) {
 export function figmaHeight(px) {
   const percent = (px / FIGMA_HEIGHT) * 100;
   return hp(`${percent}%`);
+}
+
+/**
+ * Convert Figma font size (px) to responsive font size
+ */
+export function figmaFontSize(px) {
+  const percent = (px / FIGMA_HEIGHT) * 100;
+  return RFPercentage(percent);
 }
