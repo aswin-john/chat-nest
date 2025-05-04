@@ -17,7 +17,7 @@ import globalStyles from '../../themes/globalStyles';
 const LoginScreen = () => {
   const [passwordVisible, setPasswordVisible] = useState(false);
 
-  // 👉 Helper components placed BEFORE return
+  
   const LoginHeader = () => (
     <>
       <Text style={styles.welcomeText}>Welcome back! Let’s get you started</Text>
