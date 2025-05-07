@@ -9,13 +9,17 @@ import {
   ScrollView,
   KeyboardAvoidingView,
 } from 'react-native';
+import Feather from 'react-native-vector-icons/Feather';
 
 import { figmaWidth, figmaHeight, figmaFontSize } from '../../utils/figmaHelpers';
 import colors from '../../themes/colors';
 import globalStyles from '../../themes/globalStyles';
 
+
 const LoginScreen = () => {
+  const [password, setPassword] = useState('');
   const [passwordVisible, setPasswordVisible] = useState(false);
+  const [userName, setUserName] = useState('');
 
   
   const LoginHeader = () => (
@@ -36,23 +40,29 @@ const LoginScreen = () => {
         placeholder="user name"
         style={styles.input}
         placeholderTextColor="#999"
+        value={userName}
+        onChangeText={setUserName}
       />
     </View>
   );
 
   const PasswordInput = () => (
-    <View style={[globalStyles.inputContainer1, { marginBottom: figmaHeight(10) }]}>
+    <View style={[globalStyles.inputContainer1, { marginBottom: figmaHeight(10), flexDirection: 'row', alignItems: 'center' }]}>
       <TextInput
         placeholder="password"
-        style={styles.input}
+        style={[styles.input, { flex: 1 }]}
         placeholderTextColor="#999"
         secureTextEntry={!passwordVisible}
+        value={password}
+        onChangeText={setPassword}
+        
       />
-      <TouchableOpacity
-        style={styles.eyeButton}
-        onPress={() => setPasswordVisible(!passwordVisible)}
-      >
-        <Text>{passwordVisible ? '🙈' : '👁️'}</Text>
+      <TouchableOpacity onPress={() => setPasswordVisible(!passwordVisible)}>
+        <Feather
+          name={passwordVisible ? 'eye' : 'eye-off'}
+          size={figmaFontSize(20)}
+          color="black"
+        />
       </TouchableOpacity>
     </View>
   );
@@ -93,14 +103,32 @@ const LoginScreen = () => {
     <KeyboardAvoidingView style={{ flex: 1 }}>
       <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
         <View style={globalStyles.container}>
-          <LoginHeader />
-          <UsernameInput />
-          <PasswordInput />
-          <ForgotPassword />
-          <SignInButton />
-          <OrDivider />
-          <SocialIcons />
-          <RegisterPrompt />
+          {/* <LoginHeader /> */}
+          {LoginHeader()}
+          {/* <UsernameInput /> */}
+          {UsernameInput()}
+          {/* <PasswordInput password={password} setPassword={setPassword} /> */}
+          {PasswordInput()}
+          {/* <PasswordInput
+            password={password}
+            setPassword={setPassword}
+            passwordVisible={passwordVisible}
+            setPasswordVisible={setPasswordVisible}
+          /> */}
+
+
+          {/* <ForgotPassword /> */}
+          {ForgotPassword()}
+          {/* <SignInButton /> */}
+          {SignInButton()}
+          {/* <OrDivider /> */}
+          {OrDivider()}
+
+          {/* <SocialIcons /> */}
+          {SocialIcons()}
+
+          {/* <RegisterPrompt /> */}
+          {RegisterPrompt()}
         </View>
       </ScrollView>
     </KeyboardAvoidingView>
