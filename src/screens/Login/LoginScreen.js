@@ -16,12 +16,19 @@ import Entypo from 'react-native-vector-icons/Entypo';
 import { figmaWidth, figmaHeight, figmaFontSize } from '../../utils/figmaHelpers';
 import colors from '../../themes/colors';
 import globalStyles from '../../themes/globalStyles';
+import useLoginViewModel from './LoginViewModel'; // ✅ Use MVVM ViewModel
 
 
 const LoginScreen = () => {
-  const [password, setPassword] = useState('');
-  const [passwordVisible, setPasswordVisible] = useState(false);
-  const [userName, setUserName] = useState('');
+ // ✅ Get all UI state and logic from the ViewModel
+ const {
+  userName,
+  setUserName,
+  password,
+  setPassword,
+  passwordVisible,
+  togglePasswordVisibility,
+} = useLoginViewModel();
 
   
   const LoginHeader = () => (
@@ -59,7 +66,7 @@ const LoginScreen = () => {
         onChangeText={setPassword}
         
       />
-      <TouchableOpacity onPress={() => setPasswordVisible(!passwordVisible)}>
+      <TouchableOpacity onPress={togglePasswordVisibility}>
         <Feather
           name={passwordVisible ? 'eye' : 'eye-off'}
           size={figmaFontSize(20)}
