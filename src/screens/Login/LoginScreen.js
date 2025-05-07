@@ -12,6 +12,7 @@ import {
 import Feather from 'react-native-vector-icons/Feather';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import Entypo from 'react-native-vector-icons/Entypo';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import { figmaWidth, figmaHeight, figmaFontSize } from '../../utils/figmaHelpers';
 import colors from '../../themes/colors';
@@ -45,6 +46,11 @@ const LoginScreen = () => {
 
   const UsernameInput = () => (
     <View style={globalStyles.inputContainer1}>
+      <MaterialCommunityIcons
+          name={'account-outline'}
+          size={figmaWidth(15)}
+          color= {colors.primary}
+        />
       <TextInput
         placeholder="user name"
         style={styles.input}
@@ -57,6 +63,12 @@ const LoginScreen = () => {
 
   const PasswordInput = () => (
     <View style={[globalStyles.inputContainer1, { marginBottom: figmaHeight(10), flexDirection: 'row', alignItems: 'center' }]}>
+      <MaterialCommunityIcons
+          name={'lock-outline'}
+          size={figmaWidth(15)}
+          color= {colors.primary}
+        />
+      
       <TextInput
         placeholder="password"
         style={[styles.input, { flex: 1 }]}
@@ -66,11 +78,13 @@ const LoginScreen = () => {
         onChangeText={setPassword}
         
       />
-      <TouchableOpacity onPress={togglePasswordVisibility}>
+      <TouchableOpacity onPress={togglePasswordVisibility}
+      // style = {{borderWidth:1}}
+      >
         <Feather
           name={passwordVisible ? 'eye' : 'eye-off'}
-          size={figmaFontSize(20)}
-          color="black"
+          size={figmaWidth(15)}
+          color={colors.primary}
         />
       </TouchableOpacity>
     </View>
@@ -185,6 +199,7 @@ const styles = StyleSheet.create({
     paddingVertical: figmaHeight(10),
     fontSize: figmaFontSize(14),
     color: colors.textPrimary,
+    marginLeft: figmaWidth(4),
   },
   eyeButton: {
     padding: figmaWidth(8),
