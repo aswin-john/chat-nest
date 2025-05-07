@@ -10,6 +10,8 @@ import {
   KeyboardAvoidingView,
 } from 'react-native';
 import Feather from 'react-native-vector-icons/Feather';
+import AntDesign from 'react-native-vector-icons/AntDesign';
+import Entypo from 'react-native-vector-icons/Entypo';
 
 import { figmaWidth, figmaHeight, figmaFontSize } from '../../utils/figmaHelpers';
 import colors from '../../themes/colors';
@@ -85,9 +87,25 @@ const LoginScreen = () => {
 
   const SocialIcons = () => (
     <View style={styles.socialIcons}>
-      <Text style={styles.socialIcon}>G</Text>
-      <Text style={styles.socialIcon}>📸</Text>
-      <Text style={styles.socialIcon}>f</Text>
+      {/* <Text style={styles.socialIcon}>G</Text> */}
+      <AntDesign
+          name={'google'}
+          size={figmaFontSize(25)}
+          color="black"
+        />
+      {/* <Text style={styles.socialIcon}>📸</Text> */}
+      <AntDesign
+          name={'instagram'}
+          size={figmaFontSize(25)}
+          color="black"
+        />
+      {/* <Text style={styles.socialIcon}>f</Text> */}
+      <Entypo
+          name={'facebook'}
+          size={figmaFontSize(25)}
+          color="black"
+        />
+      {/* <Text style={styles.socialIcon}>t</Text> */}
     </View>
   );
 
