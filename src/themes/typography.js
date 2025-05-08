@@ -21,6 +21,12 @@ const typography = {
     color: colors.secondary,
   },
 
+  textPoppinsRegular10: {
+    fontSize: figmaFontSize(10),
+    fontFamily: fonts.PoppinsRegular,
+    color: colors.black,
+  },
+
   textPoppinsMedium12: {
     fontSize: figmaFontSize(12),
     fontFamily: fonts.PoppinsMedium,

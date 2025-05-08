@@ -145,9 +145,9 @@ const LoginHeader = () => (
   );
 
   const RegisterPrompt = () => (
-    <Text style={styles.registerText}>
+    <Text style={typography.textPoppinsRegular10}>
       Don’t have an Account?{' '}
-      <Text style={styles.registerNow}>Register now</Text>
+      <Text style={[typography.textPoppinsMedium12,{color: colors.tertiary,}]}>Register now</Text>
     </Text>
   );
 
@@ -224,14 +224,14 @@ const styles = StyleSheet.create({
     fontSize: figmaFontSize(20),
     color: colors.black,
   },
-  registerText: {
-    fontSize: figmaFontSize(12),
-    color: colors.textSecondary,
-  },
-  registerNow: {
-    color: colors.primary,
-    fontWeight: 'bold',
-  },
+  // registerText: {
+  //   fontSize: figmaFontSize(12),
+  //   color: colors.textSecondary,
+  // },
+  // registerNow: {
+  //   color: colors.primary,
+  //   fontWeight: 'bold',
+  // },
 });
 
 export default LoginScreen;
