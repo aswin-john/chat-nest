@@ -104,18 +104,20 @@ const LoginHeader = () => (
 
   const ForgotPassword = () => (
     <TouchableOpacity style={{ alignSelf: 'flex-end', marginBottom: figmaHeight(30) }}>
-      <Text style={styles.forgotPassword}>Forgot password?</Text>
+      <Text style={typography.textPoppinsRegular8}>Forgot password?</Text>
     </TouchableOpacity>
   );
 
   const SignInButton = () => (
     <TouchableOpacity style={globalStyles.Button1}>
-      <Text style={styles.signInText}>Sign In</Text>
+      <Text style={typography.textPoppinsMedium12}>Sign In</Text>
     </TouchableOpacity>
   );
 
   const OrDivider = () => (
-    <Text style={styles.orText}>or</Text>
+    <View style = {styles.orWrapper}>
+      <Text style={[typography.textPoppinsRegular8,{color: colors.placeholderColor,}]}>or</Text>
+    </View>
   );
 
   const SocialIcons = () => (
@@ -208,20 +210,9 @@ const styles = StyleSheet.create({
   eyeButton: {
     padding: figmaWidth(8),
   },
-  forgotPassword: {
-    fontSize: figmaFontSize(12),
-    color: colors.secondary,
-  },
-  signInText: {
-    color: colors.background,
-    fontSize: figmaFontSize(16),
-    fontWeight: '600',
-  },
-  orText: {
+  orWrapper: {
     marginBottom: figmaHeight(15),
-    fontSize: figmaFontSize(14),
-    color: colors.textSecondary,
-  },
+  },  
   socialIcons: {
     flexDirection: 'row',
     justifyContent: 'space-around',
