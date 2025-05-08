@@ -66,7 +66,7 @@ const LoginHeader = () => (
       <TextInput
         placeholder="user name"
         style={styles.input}
-        placeholderTextColor="#999"
+        placeholderTextColor={colors.placeholderColor}
         value={userName}
         onChangeText={setUserName}
       />
@@ -84,7 +84,7 @@ const LoginHeader = () => (
       <TextInput
         placeholder="password"
         style={[styles.input, { flex: 1 }]}
-        placeholderTextColor="#999"
+        placeholderTextColor={colors.placeholderColor}
         secureTextEntry={!passwordVisible}
         value={password}
         onChangeText={setPassword}

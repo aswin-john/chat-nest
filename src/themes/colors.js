@@ -3,8 +3,10 @@ const colors = {
     secondary: '#e11d48',
     background: '#fff',
     textSecondary: '#999',
-    inputBackground: '#f0f0f0',
-    black:'#000000'
+    inputBackground: '#F1F1F1',
+    black:'#000000',
+    placeholderColor: '#B5B5B5',
+
   };
   
   export default colors;
