@@ -1,7 +1,8 @@
 import { StyleSheet } from 'react-native';
 import colors from './colors';
 import typography from './typography';
-import { figmaWidth, figmaHeight } from '../utils/figmaHelpers';
+import { figmaWidth, figmaHeight, figmaFontSize } from '../utils/figmaHelpers';
+import fonts from './fonts';
 
 const globalStyles = StyleSheet.create({
     container: {
@@ -29,6 +30,9 @@ const globalStyles = StyleSheet.create({
         height: figmaHeight(32),
         marginBottom: figmaHeight(15),
       },
+      
+      
+
 });
 
 export default globalStyles;

@@ -1,22 +1,20 @@
-import { figmaFontSize } from '../utils/figmaHelpers';
+import { figmaWidth, figmaHeight, figmaFontSize } from '../utils/figmaHelpers';
+import fonts from './fonts';
+import colors from './colors';
 
 const typography = {
-  titleLarge: {
-    fontSize: figmaFontSize(24),
-    fontWeight: '700',
+
+  textRobotoMedium18: {
+    fontSize: figmaFontSize(18),
+    fontFamily: fonts.RobotoMedium,
+    color: colors.black,
   },
-  titleMedium: {
-    fontSize: figmaFontSize(20),
-    fontWeight: '600',
+  textPoppinsMedium18: {
+    fontSize: figmaFontSize(18),
+    fontFamily: fonts.PoppinsMedium,
+    color: colors.primary,
   },
-  textRegular: {
-    fontSize: figmaFontSize(16),
-    fontWeight: '400',
-  },
-  textSmall: {
-    fontSize: figmaFontSize(12),
-    fontWeight: '400',
-  },
+
 };
 
 export default typography;

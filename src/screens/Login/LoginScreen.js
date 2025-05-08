@@ -17,6 +17,7 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import { figmaWidth, figmaHeight, figmaFontSize } from '../../utils/figmaHelpers';
 import colors from '../../themes/colors';
 import globalStyles from '../../themes/globalStyles';
+import typography from '../../themes/typography';
 import fonts from '../../themes/fonts';
 import useLoginViewModel from './LoginViewModel'; // ✅ Use MVVM ViewModel
 
@@ -33,17 +34,27 @@ const LoginScreen = () => {
 } = useLoginViewModel();
 
   
-  const LoginHeader = () => (
-    <>
-      <Text style={styles.welcomeText}>Welcome back! Let’s get you started</Text>
-      <Image
-        source={require('../../../assets/images/login-illustration.png')}
-        style={styles.image}
-        resizeMode="contain"
-      />
-      <Text style={styles.loginLabel}>Login</Text>
-    </>
-  );
+const LoginHeader = () => (
+  <>
+    <View style={styles.welcomeWrapper}>
+      <Text style={[typography.textRobotoMedium18, { textAlign: 'center' }]}>
+        Welcome back! Let’s get you started
+      </Text>
+    </View>
+
+    <Image
+      source={require('../../../assets/images/login-illustration.png')}
+      style={styles.image}
+      resizeMode="contain"
+    />
+    
+    <View style={[styles.loginWrapper,{width:'100%'}]}>
+      <Text style={typography.textPoppinsMedium18}>Login</Text>
+    </View>
+    
+  </>
+);
+
 
   const UsernameInput = () => (
     <View style={globalStyles.inputContainer1}>
@@ -175,32 +186,23 @@ const LoginScreen = () => {
   );
 };
 const styles = StyleSheet.create({
-  welcomeText: {
-    fontSize: figmaFontSize(18),
-    // fontWeight: 'bold',
-    fontFamily: fonts.PoppinsBold,
-    textAlign: 'center',
+  welcomeWrapper: {
     marginBottom: figmaHeight(25),
     paddingHorizontal: figmaWidth(26),
-    color: colors.textPrimary,
-  },
+  },  
   image: {
     width: figmaWidth(160),    
     height: figmaHeight(160),  
     marginBottom: figmaHeight(20),
   },
-  loginLabel: {
-    fontSize: figmaFontSize(18),
-    fontWeight: '600',
-    alignSelf: 'flex-start',
-    marginBottom: figmaHeight(20),
-    color: colors.primary,
-  },
+  loginWrapper: {
+    marginBottom: figmaHeight(20),    
+  }, 
   input: {
     flex: 1,
     paddingVertical: figmaHeight(10),
     fontSize: figmaFontSize(14),
-    color: colors.textPrimary,
+    color: colors.black,
     marginLeft: figmaWidth(4),
   },
   eyeButton: {
@@ -229,7 +231,7 @@ const styles = StyleSheet.create({
   },
   socialIcon: {
     fontSize: figmaFontSize(20),
-    color: colors.textPrimary,
+    color: colors.black,
   },
   registerText: {
     fontSize: figmaFontSize(12),
