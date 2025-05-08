@@ -17,6 +17,7 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import { figmaWidth, figmaHeight, figmaFontSize } from '../../utils/figmaHelpers';
 import colors from '../../themes/colors';
 import globalStyles from '../../themes/globalStyles';
+import fonts from '../../themes/fonts';
 import useLoginViewModel from './LoginViewModel'; // ✅ Use MVVM ViewModel
 
 
@@ -176,7 +177,8 @@ const LoginScreen = () => {
 const styles = StyleSheet.create({
   welcomeText: {
     fontSize: figmaFontSize(18),
-    fontWeight: 'bold',
+    // fontWeight: 'bold',
+    fontFamily: fonts.PoppinsBold,
     textAlign: 'center',
     marginBottom: figmaHeight(25),
     paddingHorizontal: figmaWidth(26),
