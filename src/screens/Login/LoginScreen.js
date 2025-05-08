@@ -84,7 +84,7 @@ const LoginScreen = () => {
         <Feather
           name={passwordVisible ? 'eye' : 'eye-off'}
           size={figmaWidth(15)}
-          color={colors.primary}
+          color={colors.black}
         />
       </TouchableOpacity>
     </View>

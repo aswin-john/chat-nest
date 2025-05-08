@@ -5,6 +5,7 @@ const colors = {
     textPrimary: '#000',
     textSecondary: '#999',
     inputBackground: '#f0f0f0',
+    black:'#000000'
   };
   
   export default colors;
