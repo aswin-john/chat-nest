@@ -30,6 +30,23 @@ const globalStyles = StyleSheet.create({
         height: figmaHeight(32),
         marginBottom: figmaHeight(15),
       },
+      input: {
+        flex: 1,
+        paddingVertical: figmaHeight(11),
+        fontSize: figmaFontSize(14),
+        color: colors.black,
+        marginLeft: figmaWidth(4),
+      },
+      orWrapper: {
+        marginBottom: figmaHeight(15),
+      }, 
+      socialIcons: {
+        flexDirection: 'row',
+        justifyContent: 'space-around',
+        width: figmaWidth(117), 
+        height: figmaHeight(25),
+        marginBottom: figmaHeight(15),
+      },
       
       
 

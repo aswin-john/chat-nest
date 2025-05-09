@@ -65,7 +65,7 @@ const LoginHeader = () => (
         />
       <TextInput
         placeholder="user name"
-        style={styles.input}
+        style={globalStyles.input}
         placeholderTextColor={colors.placeholderColor}
         value={userName}
         onChangeText={setUserName}
@@ -83,7 +83,7 @@ const LoginHeader = () => (
       
       <TextInput
         placeholder="password"
-        style={[styles.input, { flex: 1 }]}
+        style={[globalStyles.input, { flex: 1, }]}
         placeholderTextColor={colors.placeholderColor}
         secureTextEntry={!passwordVisible}
         value={password}
@@ -91,7 +91,6 @@ const LoginHeader = () => (
         
       />
       <TouchableOpacity onPress={togglePasswordVisibility}
-      // style = {{borderWidth:1}}
       >
         <Feather
           name={passwordVisible ? 'eye' : 'eye-off'}
@@ -115,13 +114,13 @@ const LoginHeader = () => (
   );
 
   const OrDivider = () => (
-    <View style = {styles.orWrapper}>
+    <View style = {globalStyles.orWrapper}>
       <Text style={[typography.textPoppinsRegular8,{color: colors.placeholderColor,}]}>or</Text>
     </View>
   );
 
   const SocialIcons = () => (
-    <View style={styles.socialIcons}>
+    <View style={globalStyles.socialIcons}>
       {/* <Text style={styles.socialIcon}>G</Text> */}
       <AntDesign
           name={'google'}
@@ -200,38 +199,6 @@ const styles = StyleSheet.create({
   loginWrapper: {
     marginBottom: figmaHeight(20),    
   }, 
-  input: {
-    flex: 1,
-    paddingVertical: figmaHeight(10),
-    fontSize: figmaFontSize(14),
-    color: colors.black,
-    marginLeft: figmaWidth(4),
-  },
-  eyeButton: {
-    padding: figmaWidth(8),
-  },
-  orWrapper: {
-    marginBottom: figmaHeight(15),
-  },  
-  socialIcons: {
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    width: figmaWidth(117), 
-    height: figmaHeight(25),
-    marginBottom: figmaHeight(15),
-  },
-  socialIcon: {
-    fontSize: figmaFontSize(20),
-    color: colors.black,
-  },
-  // registerText: {
-  //   fontSize: figmaFontSize(12),
-  //   color: colors.textSecondary,
-  // },
-  // registerNow: {
-  //   color: colors.primary,
-  //   fontWeight: 'bold',
-  // },
 });
 
 export default LoginScreen;
