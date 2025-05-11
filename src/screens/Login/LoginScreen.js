@@ -13,6 +13,7 @@ import Feather from 'react-native-vector-icons/Feather';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import Entypo from 'react-native-vector-icons/Entypo';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import CustomInput from '../../components/CustomInput'
 
 import { figmaWidth, figmaHeight, figmaFontSize } from '../../utils/figmaHelpers';
 import colors from '../../themes/colors';
@@ -29,8 +30,8 @@ const LoginScreen = () => {
   setUserName,
   password,
   setPassword,
-  passwordVisible,
-  togglePasswordVisibility,
+  // passwordVisible,
+  // togglePasswordVisibility,
 } = useLoginViewModel();
 
   
@@ -56,50 +57,50 @@ const LoginHeader = () => (
 );
 
 
-  const UsernameInput = () => (
-    <View style={globalStyles.inputContainer1}>
-      <MaterialCommunityIcons
-          name={'account-outline'}
-          size={figmaWidth(15)}
-          color= {colors.primary}
-        />
-      <TextInput
-        placeholder="user name"
-        style={globalStyles.input}
-        placeholderTextColor={colors.placeholderColor}
-        value={userName}
-        onChangeText={setUserName}
-      />
-    </View>
-  );
+  // const UsernameInput = () => (
+  //   <View style={globalStyles.inputContainer1}>
+  //     <MaterialCommunityIcons
+  //         name={'account-outline'}
+  //         size={figmaWidth(15)}
+  //         color= {colors.primary}
+  //       />
+  //     <TextInput
+  //       placeholder="user name"
+  //       style={globalStyles.input}
+  //       placeholderTextColor={colors.placeholderColor}
+  //       value={userName}
+  //       onChangeText={setUserName}
+  //     />
+  //   </View>
+  // );
 
-  const PasswordInput = () => (
-    <View style={[globalStyles.inputContainer1, { marginBottom: figmaHeight(10), flexDirection: 'row', alignItems: 'center' }]}>
-      <MaterialCommunityIcons
-          name={'lock-outline'}
-          size={figmaWidth(15)}
-          color= {colors.primary}
-        />
+  // const PasswordInput = () => (
+  //   <View style={[globalStyles.inputContainer1, { marginBottom: figmaHeight(10), flexDirection: 'row', alignItems: 'center' }]}>
+  //     <MaterialCommunityIcons
+  //         name={'lock-outline'}
+  //         size={figmaWidth(15)}
+  //         color= {colors.primary}
+  //       />
       
-      <TextInput
-        placeholder="password"
-        style={[globalStyles.input, { flex: 1, }]}
-        placeholderTextColor={colors.placeholderColor}
-        secureTextEntry={!passwordVisible}
-        value={password}
-        onChangeText={setPassword}
+  //     <TextInput
+  //       placeholder="password"
+  //       style={[globalStyles.input, { flex: 1, }]}
+  //       placeholderTextColor={colors.placeholderColor}
+  //       secureTextEntry={!passwordVisible}
+  //       value={password}
+  //       onChangeText={setPassword}
         
-      />
-      <TouchableOpacity onPress={togglePasswordVisibility}
-      >
-        <Feather
-          name={passwordVisible ? 'eye' : 'eye-off'}
-          size={figmaWidth(15)}
-          color={colors.black}
-        />
-      </TouchableOpacity>
-    </View>
-  );
+  //     />
+  //     <TouchableOpacity onPress={togglePasswordVisibility}
+  //     >
+  //       <Feather
+  //         name={passwordVisible ? 'eye' : 'eye-off'}
+  //         size={figmaWidth(15)}
+  //         color={colors.black}
+  //       />
+  //     </TouchableOpacity>
+  //   </View>
+  // );
 
   const ForgotPassword = () => (
     <TouchableOpacity style={{ alignSelf: 'flex-end', marginBottom: figmaHeight(30) }}>
@@ -158,15 +159,42 @@ const LoginHeader = () => (
           {/* <LoginHeader /> */}
           {LoginHeader()}
           {/* <UsernameInput /> */}
-          {UsernameInput()}
+          {/* {UsernameInput()} */}
           {/* <PasswordInput password={password} setPassword={setPassword} /> */}
-          {PasswordInput()}
+
+          {/* Custom input for user name  */}
+          <CustomInput
+            IconComponent={MaterialCommunityIcons}
+            iconName="account-outline"
+            placeholder="user name"
+            value={userName}
+            onChangeText={setUserName}
+          />
+            
+
+          {/* {PasswordInput()} */}
           {/* <PasswordInput
             password={password}
             setPassword={setPassword}
             passwordVisible={passwordVisible}
             setPasswordVisible={setPasswordVisible}
           /> */}
+
+          {/* Custom input for password  */}
+          <CustomInput
+            IconComponent={MaterialCommunityIcons}
+            iconName="lock-outline"
+            placeholder="password"
+            value={password}
+            onChangeText={setPassword}
+            isPassword={true}
+            containerStyle={{
+              marginBottom: figmaHeight(10),
+              flexDirection: 'row',
+              alignItems: 'center',
+            }}
+          />
+
 
 
           {/* <ForgotPassword /> */}
