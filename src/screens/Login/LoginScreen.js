@@ -14,6 +14,7 @@ import AntDesign from 'react-native-vector-icons/AntDesign';
 import Entypo from 'react-native-vector-icons/Entypo';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import CustomInput from '../../components/CustomInput'
+import CustomButton from '../../components/CustomButton';
 
 import { figmaWidth, figmaHeight, figmaFontSize } from '../../utils/figmaHelpers';
 import colors from '../../themes/colors';
@@ -108,11 +109,11 @@ const LoginHeader = () => (
     </TouchableOpacity>
   );
 
-  const SignInButton = () => (
-    <TouchableOpacity style={globalStyles.Button1}>
-      <Text style={typography.textPoppinsMedium12}>Sign In</Text>
-    </TouchableOpacity>
-  );
+  // const SignInButton = () => (
+  //   <TouchableOpacity style={globalStyles.Button1}>
+  //     <Text style={typography.textPoppinsMedium12}>Sign In</Text>
+  //   </TouchableOpacity>
+  // );
 
   const OrDivider = () => (
     <View style = {globalStyles.orWrapper}>
@@ -200,7 +201,17 @@ const LoginHeader = () => (
           {/* <ForgotPassword /> */}
           {ForgotPassword()}
           {/* <SignInButton /> */}
-          {SignInButton()}
+          {/* {SignInButton()} */}
+
+          <CustomButton
+            label="Sign In"
+            // onPress={handleRegister}
+            buttonStyle={{ width: figmaWidth(105), height: figmaHeight(32),marginBottom: figmaHeight(15), }}
+            textStyle={{  }}
+          />
+
+
+
           {/* <OrDivider /> */}
           {OrDivider()}
 
