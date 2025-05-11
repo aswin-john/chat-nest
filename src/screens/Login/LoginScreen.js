@@ -31,8 +31,6 @@ const LoginScreen = () => {
   setUserName,
   password,
   setPassword,
-  // passwordVisible,
-  // togglePasswordVisibility,
 } = useLoginViewModel();
 
   
@@ -58,62 +56,12 @@ const LoginHeader = () => (
 );
 
 
-  // const UsernameInput = () => (
-  //   <View style={globalStyles.inputContainer1}>
-  //     <MaterialCommunityIcons
-  //         name={'account-outline'}
-  //         size={figmaWidth(15)}
-  //         color= {colors.primary}
-  //       />
-  //     <TextInput
-  //       placeholder="user name"
-  //       style={globalStyles.input}
-  //       placeholderTextColor={colors.placeholderColor}
-  //       value={userName}
-  //       onChangeText={setUserName}
-  //     />
-  //   </View>
-  // );
-
-  // const PasswordInput = () => (
-  //   <View style={[globalStyles.inputContainer1, { marginBottom: figmaHeight(10), flexDirection: 'row', alignItems: 'center' }]}>
-  //     <MaterialCommunityIcons
-  //         name={'lock-outline'}
-  //         size={figmaWidth(15)}
-  //         color= {colors.primary}
-  //       />
-      
-  //     <TextInput
-  //       placeholder="password"
-  //       style={[globalStyles.input, { flex: 1, }]}
-  //       placeholderTextColor={colors.placeholderColor}
-  //       secureTextEntry={!passwordVisible}
-  //       value={password}
-  //       onChangeText={setPassword}
-        
-  //     />
-  //     <TouchableOpacity onPress={togglePasswordVisibility}
-  //     >
-  //       <Feather
-  //         name={passwordVisible ? 'eye' : 'eye-off'}
-  //         size={figmaWidth(15)}
-  //         color={colors.black}
-  //       />
-  //     </TouchableOpacity>
-  //   </View>
-  // );
-
   const ForgotPassword = () => (
     <TouchableOpacity style={{ alignSelf: 'flex-end', marginBottom: figmaHeight(30) }}>
       <Text style={typography.textPoppinsRegular8}>Forgot password?</Text>
     </TouchableOpacity>
   );
 
-  // const SignInButton = () => (
-  //   <TouchableOpacity style={globalStyles.Button1}>
-  //     <Text style={typography.textPoppinsMedium12}>Sign In</Text>
-  //   </TouchableOpacity>
-  // );
 
   const OrDivider = () => (
     <View style = {globalStyles.orWrapper}>
@@ -123,25 +71,21 @@ const LoginHeader = () => (
 
   const SocialIcons = () => (
     <View style={globalStyles.socialIcons}>
-      {/* <Text style={styles.socialIcon}>G</Text> */}
       <AntDesign
           name={'google'}
           size={figmaFontSize(25)}
           color="black"
         />
-      {/* <Text style={styles.socialIcon}>📸</Text> */}
       <AntDesign
           name={'instagram'}
           size={figmaFontSize(25)}
           color="black"
         />
-      {/* <Text style={styles.socialIcon}>f</Text> */}
       <Entypo
           name={'facebook'}
           size={figmaFontSize(25)}
           color="black"
         />
-      {/* <Text style={styles.socialIcon}>t</Text> */}
     </View>
   );
 
@@ -156,12 +100,8 @@ const LoginHeader = () => (
   return (
     <KeyboardAvoidingView style={{ flex: 1 }}>
       <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
-        <View style={globalStyles.container}>
-          {/* <LoginHeader /> */}
+        <View style={globalStyles.container}>          
           {LoginHeader()}
-          {/* <UsernameInput /> */}
-          {/* {UsernameInput()} */}
-          {/* <PasswordInput password={password} setPassword={setPassword} /> */}
 
           {/* Custom input for user name  */}
           <CustomInput
@@ -171,15 +111,6 @@ const LoginHeader = () => (
             value={userName}
             onChangeText={setUserName}
           />
-            
-
-          {/* {PasswordInput()} */}
-          {/* <PasswordInput
-            password={password}
-            setPassword={setPassword}
-            passwordVisible={passwordVisible}
-            setPasswordVisible={setPasswordVisible}
-          /> */}
 
           {/* Custom input for password  */}
           <CustomInput
@@ -196,13 +127,9 @@ const LoginHeader = () => (
             }}
           />
 
-
-
-          {/* <ForgotPassword /> */}
           {ForgotPassword()}
-          {/* <SignInButton /> */}
-          {/* {SignInButton()} */}
 
+          {/* Custom button for sign in  */}
           <CustomButton
             label="Sign In"
             // onPress={handleRegister}
@@ -210,15 +137,10 @@ const LoginHeader = () => (
             textStyle={{  }}
           />
 
-
-
-          {/* <OrDivider /> */}
           {OrDivider()}
 
-          {/* <SocialIcons /> */}
           {SocialIcons()}
 
-          {/* <RegisterPrompt /> */}
           {RegisterPrompt()}
         </View>
       </ScrollView>
